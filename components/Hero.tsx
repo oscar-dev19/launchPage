@@ -10,7 +10,10 @@ export function Hero({ onFormSubmit }: HeroProps) {
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
       {/* Dark gradient overlay for better text contrast */}
-      <div className="absolute inset-0 bg-gradient-to-b from-forest-900/85 via-forest-900/75 to-forest-800/70 backdrop-blur-[2px]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#1a2f1e]/95 via-[#234229]/90 to-[#2a5738]/85 backdrop-blur-[2px]" />
+
+      {/* Additional dark overlay specifically for heading area */}
+      <div className="absolute inset-0 bg-[#1a2f1e]/60" />
 
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden">
