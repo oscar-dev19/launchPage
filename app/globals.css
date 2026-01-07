@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 17, 24, 39;
-  --background-end-rgb: 17, 24, 39;
+  --foreground-rgb: 42, 87, 56;
+  --background-start-rgb: 250, 252, 248;
+  --background-end-rgb: 242, 249, 244;
 }
 
 body {
@@ -33,16 +33,16 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #537465;
+  background: #a5d4be;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #6b8e7a;
+  background: #88c6a9;
 }
 
 /* Selection color */
 ::selection {
-  background: #a8c1b2;
-  color: #1e3622;
+  background: #cbe4ca;
+  color: #3f6d44;
 }
