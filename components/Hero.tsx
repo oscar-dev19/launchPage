@@ -9,11 +9,8 @@ interface HeroProps {
 export function Hero({ onFormSubmit }: HeroProps) {
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
-      {/* Dark gradient overlay for better text contrast */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#1a2f1e]/95 via-[#234229]/90 to-[#2a5738]/85 backdrop-blur-[2px]" />
-
-      {/* Additional dark overlay specifically for heading area */}
-      <div className="absolute inset-0 bg-[#1a2f1e]/60" />
+      {/* Soft pastel background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-cream-50 via-sage-100 to-cream-100" />
 
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden">
@@ -30,14 +27,14 @@ export function Hero({ onFormSubmit }: HeroProps) {
               <span className="text-sm text-white font-medium">Beta Access Coming Soon</span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#1a2f1e] mb-6 leading-tight">
               Grow Your{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-sprout-light to-sprout">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2d4e34] to-[#1a2f1e]">
                 Focus Garden
               </span>
             </h1>
 
-            <p className="text-lg sm:text-xl text-forest-100 mb-8 max-w-xl mx-auto lg:mx-0">
+            <p className="text-lg sm:text-xl text-[#2d4e34] mb-8 max-w-xl mx-auto lg:mx-0">
               StudySprout transforms your study sessions into a thriving digital garden.
               Plant seeds of concentration and harvest the fruits of knowledge.
             </p>
