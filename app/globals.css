@@ -33,16 +33,16 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #166534;
+  background: #537465;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #22c55e;
+  background: #6b8e7a;
 }
 
 /* Selection color */
 ::selection {
-  background: #34d399;
-  color: #064e3b;
+  background: #a8c1b2;
+  color: #1e3622;
 }
