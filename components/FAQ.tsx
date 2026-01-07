@@ -56,7 +56,7 @@ export function FAQ() {
               >
                 <span className="font-medium text-white">{faq.question}</span>
                 <svg
-                  className={`w-5 h-5 text-forest-400 transition-transform ${
+                  className={`w-5 h-5 text-forest-300 transition-transform ${
                     openIndex === index ? 'rotate-180' : ''
                   }`}
                   fill="none"

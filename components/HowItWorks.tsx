@@ -52,11 +52,11 @@ export function HowItWorks() {
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className="bg-forest-800/50 rounded-2xl p-8 border border-forest-700/50 hover:border-sprout/50 transition-all duration-300 h-full">
-                <div className="flex items-center justify-between mb-6">
+                  <div className="flex items-center justify-between mb-6">
                   <div className="w-14 h-14 bg-sprout/20 rounded-xl flex items-center justify-center text-sprout">
                     {step.icon}
                   </div>
-                  <span className="text-4xl font-bold text-forest-700/50">
+                  <span className="text-4xl font-bold text-forest-600/60">
                     {step.number}
                   </span>
                 </div>

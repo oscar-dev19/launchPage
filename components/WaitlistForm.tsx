@@ -127,12 +127,12 @@ export function WaitlistForm({ onSubmit }: WaitlistFormProps) {
             </svg>
           </div>
           <h3 className="text-2xl font-bold text-white mb-2">You&apos;re on the list!</h3>
-          <p className="text-forest-200">Share your link to unlock rewards</p>
+          <p className="text-forest-100">Share your link to unlock rewards</p>
         </div>
 
         {/* Referral Link */}
         <div className="mb-6">
-          <label className="block text-sm text-forest-200 mb-2">Your Referral Link</label>
+          <label className="block text-sm text-forest-100 mb-2">Your Referral Link</label>
           <div className="flex gap-2">
             <input
               type="text"
@@ -157,7 +157,7 @@ export function WaitlistForm({ onSubmit }: WaitlistFormProps) {
         <div className="grid grid-cols-3 gap-3 mb-6">
           <button
             onClick={shareOnX}
-            className="flex items-center justify-center gap-2 px-4 py-3 bg-[#1DA1F2]/20 hover:bg-[#1DA1F2]/30 text-white rounded-lg transition-all"
+            className="flex items-center justify-center gap-2 px-4 py-3 bg-[#1DA1F2]/80 hover:bg-[#1DA1F2]/90 text-white rounded-lg transition-all"
           >
             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
               <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
@@ -187,14 +187,14 @@ export function WaitlistForm({ onSubmit }: WaitlistFormProps) {
         {/* Progress */}
         <div>
           <div className="flex justify-between text-sm mb-2">
-            <span className="text-forest-200">Referrals</span>
+            <span className="text-forest-100">Referrals</span>
             <span className="text-white font-semibold">{success.ref_count} / 10</span>
           </div>
           <div className="space-y-3">
             {tierProgress.map(({ target, reached, progress }) => (
               <div key={target} className="relative">
                 <div className="flex items-center justify-between text-xs mb-1">
-                  <span className={reached ? 'text-sprout' : 'text-forest-300'}>
+                  <span className={reached ? 'text-sprout' : 'text-forest-200'}>
                     {target} referral{target > 1 ? 's' : ''}
                   </span>
                   {reached && (
@@ -222,14 +222,14 @@ export function WaitlistForm({ onSubmit }: WaitlistFormProps) {
       <h3 className="text-xl font-bold text-white mb-6 text-center">Join the Beta Waitlist</h3>
 
       {error && (
-        <div className="mb-4 p-3 bg-red-500/20 border border-red-500/50 rounded-lg text-red-200 text-sm">
+        <div className="mb-4 p-3 bg-red-500/30 border border-red-500/60 rounded-lg text-red-100 text-sm">
           {error}
         </div>
       )}
 
       {/* Email */}
       <div className="mb-4">
-        <label htmlFor="email" className="block text-sm text-forest-200 mb-2">
+        <label htmlFor="email" className="block text-sm text-forest-100 mb-2">
           Email Address *
         </label>
         <input
@@ -239,13 +239,13 @@ export function WaitlistForm({ onSubmit }: WaitlistFormProps) {
           onChange={e => setFormData(prev => ({ ...prev, email: e.target.value }))}
           placeholder="you@example.com"
           required
-          className="w-full px-4 py-3 bg-forest-900/50 border border-forest-600 rounded-lg text-white placeholder-forest-400 focus:outline-none focus:border-sprout transition-colors"
+          className="w-full px-4 py-3 bg-forest-900/50 border border-forest-600 rounded-lg text-white placeholder-forest-500 focus:outline-none focus:border-sprout transition-colors"
         />
       </div>
 
       {/* Platforms */}
       <div className="mb-4">
-        <label className="block text-sm text-forest-200 mb-2">
+        <label className="block text-sm text-forest-100 mb-2">
           Platforms you&apos;ll use *
         </label>
         <div className="flex gap-3">
@@ -261,7 +261,7 @@ export function WaitlistForm({ onSubmit }: WaitlistFormProps) {
               className={`flex-1 py-3 px-4 rounded-lg border transition-all ${
                 formData.platforms[key as 'android' | 'ios' | 'web']
                   ? 'bg-sprout/20 border-sprout text-white'
-                  : 'bg-forest-900/50 border-forest-600 text-forest-300 hover:border-forest-500'
+                  : 'bg-forest-900/50 border-forest-600 text-forest-200 hover:border-forest-500'
               }`}
             >
               <span className="block text-lg mb-1">{icon}</span>
@@ -273,7 +273,7 @@ export function WaitlistForm({ onSubmit }: WaitlistFormProps) {
 
       {/* Priority */}
       <div className="mb-4">
-        <label htmlFor="priority" className="block text-sm text-forest-200 mb-2">
+        <label htmlFor="priority" className="block text-sm text-forest-100 mb-2">
           What excites you most? *
         </label>
         <select
@@ -315,7 +315,7 @@ export function WaitlistForm({ onSubmit }: WaitlistFormProps) {
         {isLoading ? 'Joining...' : 'Join Beta Waitlist'}
       </button>
 
-      <p className="text-xs text-forest-400 text-center mt-4">
+      <p className="text-xs text-forest-300 text-center mt-4">
         By joining, you agree to receive updates about StudySprout.
       </p>
     </form>

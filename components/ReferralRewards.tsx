@@ -41,7 +41,7 @@ export function ReferralRewards() {
                 <div className={`inline-flex items-center justify-center w-12 h-12 rounded-full mb-3 ${
                   index === 0
                     ? 'bg-sprout/20 text-sprout'
-                    : 'bg-forest-700/50 text-forest-300'
+                    : 'bg-forest-700/50 text-forest-200'
                 }`}>
                   <span className="text-xl font-bold">{tier.target}</span>
                 </div>
@@ -51,7 +51,7 @@ export function ReferralRewards() {
               </div>
 
               <div className="border-t border-forest-700/50 pt-4">
-                <p className="text-sm text-forest-200 text-center">
+                <p className="text-sm text-forest-100 text-center">
                   {tier.reward}
                 </p>
               </div>

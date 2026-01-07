@@ -23,13 +23,13 @@ export function Header({ onCtaClick }: HeaderProps) {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            <a href="#how-it-works" className="text-forest-100 hover:text-white transition-colors">
+            <a href="#how-it-works" className="text-forest-200 hover:text-white transition-colors">
               How It Works
             </a>
-            <a href="#rewards" className="text-forest-100 hover:text-white transition-colors">
+            <a href="#rewards" className="text-forest-200 hover:text-white transition-colors">
               Rewards
             </a>
-            <a href="#faq" className="text-forest-100 hover:text-white transition-colors">
+            <a href="#faq" className="text-forest-200 hover:text-white transition-colors">
               FAQ
             </a>
             <button
@@ -56,31 +56,31 @@ export function Header({ onCtaClick }: HeaderProps) {
           </button>
         </div>
 
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-forest-700/50 animate-slide-up">
-            <div className="flex flex-col gap-4">
-              <a
-                href="#how-it-works"
-                className="text-forest-100 hover:text-white transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                How It Works
-              </a>
-              <a
-                href="#rewards"
-                className="text-forest-100 hover:text-white transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Rewards
-              </a>
-              <a
-                href="#faq"
-                className="text-forest-100 hover:text-white transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                FAQ
-              </a>
+          {/* Mobile Navigation */}
+          {isMenuOpen && (
+            <div className="md:hidden py-4 border-t border-forest-700/50 animate-slide-up">
+              <div className="flex flex-col gap-4">
+                <a
+                  href="#how-it-works"
+                  className="text-forest-200 hover:text-white transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  How It Works
+                </a>
+                <a
+                  href="#rewards"
+                  className="text-forest-200 hover:text-white transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Rewards
+                </a>
+                <a
+                  href="#faq"
+                  className="text-forest-200 hover:text-white transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  FAQ
+                </a>
               <button
                 onClick={() => {
                   onCtaClick?.();
