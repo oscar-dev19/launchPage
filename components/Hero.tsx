@@ -28,10 +28,7 @@ export function Hero({ onFormSubmit }: HeroProps) {
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#1a2f1e] mb-6 leading-tight">
-              Grow Your{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2d4e34] to-[#1a2f1e]">
-                Focus Garden
-              </span>
+              Grow Your Focus Garden
             </h1>
 
             <p className="text-lg sm:text-xl text-[#2d4e34] mb-8 max-w-xl mx-auto lg:mx-0">
