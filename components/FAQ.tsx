@@ -4,8 +4,8 @@ import { useState } from 'react';
 
 const faqs = [
   {
-    question: 'When will the beta launch?',
-    answer: 'We\'re targeting Q2 2025 for beta launch. Join the waitlist to get early access and be the first to know when we open the gates.',
+    question: 'When will be beta launch?',
+    answer: 'We\'re targeting Q2 2026 for beta launch. Join the waitlist to get early access and be the first to know when we open the gates.',
   },
   {
     question: 'Is StudySprout free to use?',
