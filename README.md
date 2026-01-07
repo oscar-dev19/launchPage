@@ -51,10 +51,25 @@ Open [http://localhost:3000](http://localhost:3000) to see the page.
 
 1. Push your code to a GitHub repository
 2. Go to [Vercel](https://vercel.com) and import the repository
-3. Add the environment variables:
+3. Add environment variables:
    - `NEXT_PUBLIC_SUPABASE_URL`
    - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
 4. Deploy!
+
+**⚠️ Important:** After deploying, make sure to run the database schema in Supabase (see `supabase/schema.sql`).
+
+## Troubleshooting
+
+**Waitlist form not working after deployment?** See the detailed troubleshooting guide:
+
+👉 **[TROUBLESHOOTING.md](./TROUBLESHOOTING.md)**
+
+The guide covers:
+- Setting up Supabase database schema
+- Checking Vercel function logs
+- Verifying environment variables
+- Testing the API directly
+- Common issues and solutions
 
 ## Project Structure
 
