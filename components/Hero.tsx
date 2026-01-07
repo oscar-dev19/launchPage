@@ -9,6 +9,9 @@ interface HeroProps {
 export function Hero({ onFormSubmit }: HeroProps) {
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
+      {/* Dark gradient overlay for better text contrast */}
+      <div className="absolute inset-0 bg-gradient-to-b from-forest-900/85 via-forest-900/75 to-forest-800/70 backdrop-blur-[2px]" />
+
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-sprout/20 rounded-full blur-3xl" />
@@ -19,9 +22,9 @@ export function Hero({ onFormSubmit }: HeroProps) {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
           <div className="text-center lg:text-left animate-fade-in">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-forest-800/50 rounded-full mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-forest-800/80 backdrop-blur-sm rounded-full mb-6 border border-forest-700/50">
               <span className="w-2 h-2 bg-sprout rounded-full animate-pulse" />
-              <span className="text-sm text-white">Beta Access Coming Soon</span>
+              <span className="text-sm text-white font-medium">Beta Access Coming Soon</span>
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
@@ -31,7 +34,7 @@ export function Hero({ onFormSubmit }: HeroProps) {
               </span>
             </h1>
 
-            <p className="text-lg sm:text-xl text-forest-900 mb-8 max-w-xl mx-auto lg:mx-0">
+            <p className="text-lg sm:text-xl text-forest-100 mb-8 max-w-xl mx-auto lg:mx-0">
               StudySprout transforms your study sessions into a thriving digital garden.
               Plant seeds of concentration and harvest the fruits of knowledge.
             </p>
@@ -63,8 +66,8 @@ export function Hero({ onFormSubmit }: HeroProps) {
                 </div>
                 ))}
               </div>
-              <p className="text-forest-700 text-sm">
-                <span className="font-semibold text-forest-900">2,400+</span> already waiting
+              <p className="text-forest-200 text-sm">
+                <span className="font-semibold text-white">2,400+</span> already waiting
               </p>
             </div>
           </div>

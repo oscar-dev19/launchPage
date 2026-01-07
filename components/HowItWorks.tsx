@@ -56,7 +56,7 @@ export function HowItWorks() {
                   <div className="w-14 h-14 bg-sprout/20 rounded-xl flex items-center justify-center text-sprout">
                     {step.icon}
                   </div>
-                  <span className="text-4xl font-bold text-forest-600/60">
+                  <span className="text-4xl font-bold text-forest-400/80">
                     {step.number}
                   </span>
                 </div>
