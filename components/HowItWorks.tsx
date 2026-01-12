@@ -1,3 +1,8 @@
+'use client';
+
+import { motion } from 'framer-motion';
+import { ScrollReveal } from './ui/scroll-reveal';
+
 export function HowItWorks() {
   const steps = [
     {
@@ -35,39 +40,80 @@ export function HowItWorks() {
   return (
     <section id="how-it-works" className="py-20 sm:py-32 bg-forest-900/50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-            How It Works
-          </h2>
-          <p className="text-lg text-forest-200 max-w-2xl mx-auto">
-            Transform your study habits into a beautiful, growing garden
-          </p>
-        </div>
+        <ScrollReveal delay={0} direction="up">
+          <div className="text-center mb-16">
+            <motion.h2
+              className="text-3xl sm:text-4xl font-bold text-white mb-4"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              How It Works
+            </motion.h2>
+            <motion.p
+              className="text-lg text-forest-200 max-w-2xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              Transform your study habits into a beautiful, growing garden
+            </motion.p>
+          </div>
+        </ScrollReveal>
 
         <div className="grid md:grid-cols-3 gap-8">
           {steps.map((step, index) => (
-            <div
-              key={step.number}
-              className="relative group animate-slide-up"
-              style={{ animationDelay: `${index * 100}ms` }}
-            >
-              <div className="bg-forest-800/50 rounded-2xl p-8 border border-forest-700/50 hover:border-sprout/50 transition-all duration-300 h-full">
+            <ScrollReveal key={step.number} delay={index * 0.15} direction="up">
+              <motion.div
+                className="relative group h-full"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-50px' }}
+                whileHover={{ y: -5 }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className="bg-forest-800/50 rounded-2xl p-8 border border-forest-700/50 hover:border-sprout/50 transition-all duration-300 h-full">
                   <div className="flex items-center justify-between mb-6">
-                  <div className="w-14 h-14 bg-sprout/20 rounded-xl flex items-center justify-center text-sprout">
-                    {step.icon}
+                    <motion.div
+                      className="w-14 h-14 bg-sprout/20 rounded-xl flex items-center justify-center text-sprout"
+                      whileHover={{
+                        scale: 1.1,
+                        rotate: [0, -10, 10, 0],
+                        transition: { duration: 0.5 },
+                      }}
+                    >
+                      {step.icon}
+                    </motion.div>
+                    <motion.span
+                      className="text-4xl font-bold text-forest-400/80"
+                      initial={{ opacity: 0, scale: 0 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
+                    >
+                      {step.number}
+                    </motion.span>
                   </div>
-                  <span className="text-4xl font-bold text-forest-400/80">
-                    {step.number}
-                  </span>
+                  <motion.h3
+                    className="text-xl font-semibold text-white mb-3"
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
+                  >
+                    {step.title}
+                  </motion.h3>
+                  <motion.p
+                    className="text-forest-200"
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
+                  >
+                    {step.description}
+                  </motion.p>
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-3">
-                  {step.title}
-                </h3>
-                <p className="text-forest-200">
-                  {step.description}
-                </p>
-              </div>
-            </div>
+              </motion.div>
+            </ScrollReveal>
           ))}
         </div>
       </div>

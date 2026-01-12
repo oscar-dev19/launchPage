@@ -1,6 +1,8 @@
 'use client';
 
 import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ScrollReveal } from './ui/scroll-reveal';
 
 const faqs = [
   {
@@ -35,43 +37,85 @@ export function FAQ() {
   return (
     <section id="faq" className="py-20 sm:py-32 bg-forest-900/50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-            Frequently Asked Questions
-          </h2>
-          <p className="text-lg text-forest-200">
-            Everything you need to know about StudySprout
-          </p>
-        </div>
+        <ScrollReveal delay={0} direction="up">
+          <div className="text-center mb-16">
+            <motion.h2
+              className="text-3xl sm:text-4xl font-bold text-white mb-4"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              Frequently Asked Questions
+            </motion.h2>
+            <motion.p
+              className="text-lg text-forest-200"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              Everything you need to know about StudySprout
+            </motion.p>
+          </div>
+        </ScrollReveal>
 
         <div className="space-y-4">
           {faqs.map((faq, index) => (
-            <div
-              key={index}
-              className="bg-forest-800/50 rounded-xl border border-forest-700/50 overflow-hidden"
-            >
-              <button
-                onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-forest-700/30 transition-colors"
+            <ScrollReveal key={index} delay={index * 0.05} direction="up">
+              <motion.div
+                className="bg-forest-800/50 rounded-xl border border-forest-700/50 overflow-hidden"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-50px' }}
               >
-                <span className="font-medium text-white">{faq.question}</span>
-                <svg
-                  className={`w-5 h-5 text-forest-300 transition-transform ${
-                    openIndex === index ? 'rotate-180' : ''
-                  }`}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
+                <motion.button
+                  onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                  className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-forest-700/30 transition-colors"
+                  whileHover={{ x: 4 }}
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              {openIndex === index && (
-                <div className="px-6 pb-4 text-forest-200 animate-slide-up">
-                  {faq.answer}
-                </div>
-              )}
-            </div>
+                  <motion.span
+                    className="font-medium text-white"
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.3, delay: 0.1 }}
+                  >
+                    {faq.question}
+                  </motion.span>
+                  <motion.svg
+                    className={`w-5 h-5 text-forest-300 transition-transform ${
+                      openIndex === index ? 'rotate-180' : ''
+                    }`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    animate={{ rotate: openIndex === index ? 180 : 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </motion.svg>
+                </motion.button>
+                <AnimatePresence mode="wait">
+                  {openIndex === index && (
+                    <motion.div
+                      className="px-6 pb-4 text-forest-200"
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.3, ease: 'easeInOut' }}
+                    >
+                      <motion.p
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.3, delay: 0.1 }}
+                      >
+                        {faq.answer}
+                      </motion.p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            </ScrollReveal>
           ))}
         </div>
       </div>
